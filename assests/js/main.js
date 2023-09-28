@@ -13,6 +13,7 @@ const search= document.getElementById('search');
 
 let users=[];
 const display= (users)=>{
+    //console.log(users)
     let result="";
     users.forEach(async(user)=>{
         const userInfo =await getInfo(user.url)
@@ -77,17 +78,18 @@ const display= (users)=>{
     </div>
         `
     })
-
+    
     const data= document.getElementById('data');
     data.innerHTML=result;
 
 }
 async function getData(){
-    console.log("hii")
+    //console.log("hii")
     
   let response = await fetch(usersUrl);
   let data = await response.json();
   users= data;
+  console.log(users);
   display(users);
  
 }
@@ -99,7 +101,7 @@ async function getInfo(userUrl){
     return data;
   }
 
- console.log(users);
+
 
 
 
@@ -113,7 +115,7 @@ const searchInput=()=>{
     }
     else{
         result= users.filter((user)=>{
-            return user.user.login.includes(seachValue)
+            return user.login.includes(seachValue)
                 })
     
     }
