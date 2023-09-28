@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #141c2f;
+}
+nav{
+    background-color:#1f2a48 ;
+}
+.single-item{
+    background-color: #1f2a48;
+    border-radius: 5%;
+}
+.follow{
+    background-color: 141c2f;
+    border-radius: 5%;
+}
