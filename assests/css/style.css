@@ -7,6 +7,9 @@
 body{
     background-color: #141c2f;
 }
+h1{
+    color: white;
+}
 nav{
     background-color:#1f2a48 ;
 }
@@ -14,19 +17,46 @@ nav{
     background-color: #1f2a48;
     border-radius: 5%;
 }
-.follow{
-    background-color: 141c2f;
+.single-item-dark{
+    background-color: #1f2a48;
     border-radius: 5%;
+}
+.single-item-light{
+    background-color: white;
+    border-radius: 7%;
+    font-weight: 400;
+}
+
+.follow{
+    background-color: #141c2f;
+    color: white  !important;
+    border-radius: 7%;
+    font-weight: 400;
+}
+.follow-dark{
+    background-color: #141c2f;
+    color: white  !important;
+    border-radius: 7%;
+    font-weight: 400;
+}
+.follow-light{
+    background-color:rgb(217, 227, 235);
+    border-radius: 7%;
+    color: black !important;
 }
  ::placeholder{
     font-size: 20px !important;
     font-family: 'Martian Mono', monospace;
 }
-input , h1{
+input , h1 {
     position: relative;
     color: white !important;
     font-size: 20px;
     font-family: 'Martian Mono', monospace;
+}
+span{
+    font-family: 'Martian Mono', monospace;
+
 }
 button{
     right: 20px;
@@ -38,4 +68,14 @@ button{
 .btn{
     font-size: 20px;
    
+}
+.mood:hover{
+    cursor: pointer;
+}
+
+.dark-mood{
+    color: white;
+}
+.light-mood{
+    color: #141c2f;
 }
