@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    
+}
+
 body{
     background-color: #141c2f;
 }
@@ -60,17 +65,7 @@ span{
     font-family: 'Martian Mono', monospace;
 
 }
-button{
-    right: 20px;
-    bottom: 11px;
-    width: 20%;
-    display: inline-block;
-    
-}
-.btn{
-    font-size: 20px;
-   
-}
+
 .mood:hover{
     cursor: pointer;
 }

@@ -11,7 +11,8 @@ const debounce = (func, timeout = 500) => {
 const usersUrl = "https://api.github.com/users";
 const search = document.getElementById("search");
 const mood = document.getElementById('mood');
-console.log(search)
+console.log(search);
+
 
 const searchInput = () => {
   const seachValue = search.value;
@@ -59,7 +60,7 @@ const display = (user) => {
                     </div>
                 </div>
                 <div class="baio my-1 text-white">
-                    <p class="fs-4">${user.bio ?? 'no bio exist...'}</p>
+                    <p class="fs-5 my-3">${user.bio ?? 'no bio exist...'}</p>
                 </div>
                 <div class="follow d-flex justify-content-around  text-white py-4">
                     <div class="follower text-capitalize">
@@ -85,12 +86,12 @@ const display = (user) => {
                         <span>${user.twitter_username ?? 'Not Available'}</span>
                     </div>
                     <div class="col-xl-6  my-2">
-                        <a href=${user.blog}><i class="fa-solid fa-link  pe-2 fs-5 text-white"></i></a>
-                        <span> Blogs </span>
+                        <a href=${user.blog}  class="text-white" ><i class="fa-solid fa-link  pe-2 fs-5 text-white"></i>
+                        <span class='text-white'> Blogs </span></a>
                     </div>
                     <div class="col-xl-6 my-2">
-                        <a href=${user.html_url}><i class="fa-solid fa-building pe-2 fs-5 text-white"></i></a>
-                        <span> github</span>
+                        <a href=${user.html_url} class="text-white" ><i class="fa-solid fa-building pe-2 fs-5 text-white"></i>
+                        <span class='text-white'>github</span></a>
                     </div>
 
                 </div>
@@ -135,7 +136,9 @@ let moodType;
     document.querySelector('.navbar').style.backgroundColor='#1f2a48';
     document.querySelectorAll('i').forEach((item)=>{
         item.classList.replace('text-dark','text-white');
-    
+    })
+    document.querySelectorAll('span').forEach((item)=>{
+        item.classList.replace('text-dark','text-white');
     })
     document.querySelector('input').classList.replace('text-dark','text-white')
 
@@ -162,6 +165,9 @@ const lightMood= ()=>{
     document.querySelector('h2')?.classList.replace('text-white','text-dark')
     document.querySelector('.navbar').style.backgroundColor= 'white';
     document.querySelectorAll('i').forEach((item)=>{
+        item.classList.replace('text-white','text-dark');
+    })
+    document.querySelectorAll('span').forEach((item)=>{
         item.classList.replace('text-white','text-dark');
     })
     document.querySelector('input').classList.replace('text-white','text-dark')
@@ -200,4 +206,4 @@ const changeMood = ()=>{
 }
 mood.addEventListener('click',changeMood);
 const single = document.querySelector('.single-item');
-
+console.log(document.querySelectorAll('a'))
