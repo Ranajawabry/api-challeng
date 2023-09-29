@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dosis&family=Fira+Sans&family=Josefin+Sans:wght@700&family=Martian+Mono:wght@500&family=Montserrat&family=Raleway&family=Roboto&family=Urbanist&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -18,4 +18,24 @@ nav{
     background-color: 141c2f;
     border-radius: 5%;
 }
-
+ ::placeholder{
+    font-size: 20px !important;
+    font-family: 'Martian Mono', monospace;
+}
+input{
+    position: relative;
+    color: white !important;
+    font-size: 20px;
+    font-family: 'Martian Mono', monospace;
+}
+button{
+    right: 20px;
+    bottom: 11px;
+    width: 20%;
+    display: inline-block;
+    
+}
+.btn{
+    font-size: 20px;
+   
+}

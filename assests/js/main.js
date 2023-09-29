@@ -1,27 +1,43 @@
-const debounce = (func, timeout = 500)=>{
-    let timer;
-    return () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-       func()
-      }, timeout);
-    };
+const debounce = (func, timeout = 500) => {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func();
+    }, timeout);
+  };
+};
+
+const usersUrl = "https://api.github.com/users";
+const search = document.getElementById("search");
+console.log(search)
+
+const searchInput = () => {
+  const seachValue = search.value;
+  console.log(seachValue);
+  if (seachValue == "") {
+    
+  } else {
+    getData(seachValue)
   }
+};
 
-const usersUrl = 'https://api.github.com/users';
-const search= document.getElementById('search');
+const debounceSearch = debounce(searchInput, 500);
+search.addEventListener("keyup", debounceSearch);
 
-let users=[];
-const display= (users)=>{
-    //console.log(users)
-    let result="";
-    users.forEach(async(user)=>{
-        const userInfo =await getInfo(user.url)
-        console.log(userInfo)
-       
-        result+=`
+async function getData(seachValue) {
 
-        <div class="single-item col-xl-6   rounded-3 my-1">
+  let response = await fetch(`https://api.github.com/users/${seachValue}`);
+  let data = await response.json();
+  display(data);
+
+
+}
+
+const display = (user) => {
+   console.log(user)
+  const result = `
+        <div class="single-item rounded-3 my-1">
         <div class="row p-2" >
             <div class="col-3">
                 <img src=${user.avatar_url} class="w-100 rounded-circle" alt="">
@@ -36,20 +52,20 @@ const display= (users)=>{
                     </div>
                 </div>
                 <div class="baio my-1 text-white">
-                    <p class="fs-4">${userInfo.bio}</p>
+                    <p class="fs-4">${user.bio}</p>
                 </div>
                 <div class="follow d-flex justify-content-between bg-dark text-white p-3 ">
                     <div class="follower">
                         <p class="fs-5">Follower</p>
-                        <p>${userInfo.followers}</p>
+                        <p>${user.followers}</p>
                     </div>
                     <div class="following">
                         <p class="fs-5">following</p>
-                        <p>${userInfo.following}</p>
+                        <p>${user.following}</p>
                     </div>
                     <div class="repo">
                         <p class="fs-5">repos</p>
-                        <p>${userInfo.public_repos}</p>
+                        <p>${user.public_repos}</p>
                     </div>
                 </div>
                 <div class="row spcial-info my-3 text-white">
@@ -76,55 +92,9 @@ const display= (users)=>{
         </div>
     
     </div>
-        `
-    })
-    
-    const data= document.getElementById('data');
-    data.innerHTML=result;
-
-}
-async function getData(){
-    //console.log("hii")
-    
-  let response = await fetch(usersUrl);
-  let data = await response.json();
-  users= data;
-  console.log(users);
-  display(users);
- 
-}
-getData();
-
-async function getInfo(userUrl){
-    let response = await fetch(userUrl);
-    let data = await response.json();
-    return data;
-  }
-
-
-
-
-
-
-const searchInput=()=>{
-    const seachValue = search.value;
-    const result=[];
-    if(seachValue==""){
-       
-        result=users;
-    }
-    else{
-        result= users.filter((user)=>{
-            return user.login.includes(seachValue)
-                })
-    
-    }
-  
-     display(result)
-    }
- 
-
-const debounceSearch=debounce(searchInput,500)
-search.addEventListener('keyup', debounceSearch)
+        `;
+  const data = document.getElementById('data');
+  data.innerHTML = result;
+};
 
 
