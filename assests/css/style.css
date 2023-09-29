@@ -30,6 +30,8 @@ nav{
 .follow{
     background-color: #141c2f;
     color: white  !important;
+    width: 70%;
+   
     border-radius: 7%;
     font-weight: 400;
 }
