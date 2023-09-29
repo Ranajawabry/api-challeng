@@ -1,78 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dosis&family=Fira+Sans&family=Josefin+Sans:wght@700&family=Martian+Mono:wght@500&family=Montserrat&family=Raleway&family=Roboto&family=Urbanist&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Dosis&family=Fira+Sans&family=Josefin+Sans:wght@700&family=Martian+Mono:wght@500&family=Montserrat&family=Raleway&family=Roboto&family=Urbanist&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-a{
-    text-decoration: none;
-    
-}
-
-body{
-    background-color: #141c2f;
-}
-h1{
-    color: white;
-}
-nav{
-    background-color:#1f2a48 ;
-}
-.single-item{
-    background-color: #1f2a48;
-    border-radius: 5%;
-}
-.single-item-dark{
-    background-color: #1f2a48;
-    border-radius: 5%;
-}
-.single-item-light{
-    background-color: white;
-    border-radius: 7%;
-    font-weight: 400;
+a {
+  text-decoration: none;
 }
 
-.follow{
-    background-color: #141c2f;
-    color: white  !important;
-    width: 70%;
-   
-    border-radius: 7%;
-    font-weight: 400;
+body {
+  background-color: #141c2f;
 }
-.follow-dark{
-    background-color: #141c2f;
-    color: white  !important;
-    border-radius: 7%;
-    font-weight: 400;
+h1 {
+  color: white;
 }
-.follow-light{
-    background-color:rgb(217, 227, 235);
-    border-radius: 7%;
-    color: black !important;
+nav {
+  background-color: #1f2a48;
 }
- ::placeholder{
-    font-size: 20px !important;
-    font-family: 'Martian Mono', monospace;
+.single-item {
+  background-color: #1f2a48;
+  border-radius: 5%;
 }
-input , h1 {
-    position: relative;
-    color: white !important;
-    font-size: 20px;
-    font-family: 'Martian Mono', monospace;
+.single-item-dark {
+  background-color: #1f2a48;
+  border-radius: 5%;
 }
-span{
-    font-family: 'Martian Mono', monospace;
-
+.single-item-light {
+  background-color: white;
+  border-radius: 7%;
+  font-weight: 400;
 }
 
-.mood:hover{
-    cursor: pointer;
+.follow {
+  background-color: #141c2f;
+  color: white !important;
+  width: 70%;
+
+  border-radius: 7%;
+  font-weight: 400;
+}
+.follow-dark {
+  background-color: #141c2f;
+  color: white !important;
+  border-radius: 7%;
+  font-weight: 400;
+}
+.follow-light {
+  background-color: rgb(217, 227, 235);
+  border-radius: 7%;
+  color: black !important;
+}
+::placeholder {
+  font-size: 20px !important;
+  font-family: "Martian Mono", monospace;
+}
+input,
+h1 {
+  position: relative;
+  color: white !important;
+  font-size: 20px;
+  font-family: "Martian Mono", monospace;
+}
+span {
+  font-family: "Martian Mono", monospace;
 }
 
-.dark-mood{
-    color: white;
+.mood:hover {
+  cursor: pointer;
 }
-.light-mood{
-    color: #141c2f;
+
+.dark-mood {
+  color: white;
+}
+.light-mood {
+  color: #141c2f;
 }
