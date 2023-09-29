@@ -55,7 +55,7 @@ const display = (user) => {
                         <h2 class="text-white">${user.login}</h2>
                     </div>
                     <div>
-                        <p class="text-white pe-5 fs-4">${formatDate(user.created_at)}</p>
+                        <p  class=" date text-white pe-5 fs-4">${formatDate(user.created_at)}</p>
                        
                     </div>
                 </div>
@@ -122,6 +122,7 @@ let moodType;
     document.body.style.backgroundColor='#141c2f';
     mood.classList.remove('light-mood')
     mood.classList.add('dark-mood')
+    document.querySelector('.single-item')?.classList.add('single-item-dark');
     document.querySelector('.single-item')?.classList.remove('single-item-light');
     document.querySelector('.single-item')?.classList.add('single-item-dark');
      document.querySelector('.follow')?.classList.add('follow-dark');
@@ -141,10 +142,12 @@ let moodType;
         item.classList.replace('text-dark','text-white');
     })
     document.querySelector('input').classList.replace('text-dark','text-white')
+    document.querySelector('.date')?.classList.replace('text-dark','text-white')
 
     
 
 }
+
 const lightMood= ()=>{
     mood.innerHTML=`<span class="text-uppercase pe-3" >dark</span>
     <i class="fa-solid fa-moon"></i>`;
@@ -171,6 +174,7 @@ const lightMood= ()=>{
         item.classList.replace('text-white','text-dark');
     })
     document.querySelector('input').classList.replace('text-white','text-dark')
+    document.querySelector('.date')?.classList.replace('text-white','text-dark')
 
 }
 mood.innerHTML=`
@@ -205,5 +209,4 @@ const changeMood = ()=>{
 }
 }
 mood.addEventListener('click',changeMood);
-const single = document.querySelector('.single-item');
-console.log(document.querySelectorAll('a'))
+
