@@ -22,7 +22,7 @@ nav{
     font-size: 20px !important;
     font-family: 'Martian Mono', monospace;
 }
-input{
+input , h1{
     position: relative;
     color: white !important;
     font-size: 20px;
