@@ -36,6 +36,7 @@ async function getData(seachValue) {
 
 const display = (user) => {
    console.log(user)
+
   const result = `
         <div class="single-item rounded-3 my-1">
         <div class="row p-2" >
@@ -49,6 +50,7 @@ const display = (user) => {
                     </div>
                     <div>
                         <p class="text-white">${user.created_at}</p>
+                       
                     </div>
                 </div>
                 <div class="baio my-1 text-white">
@@ -96,6 +98,7 @@ const display = (user) => {
   const data = document.getElementById('data');
   data.innerHTML = result;
 };
+
 /////////////mood of site/////////
 
 const mood = document.getElementById('mood');
@@ -103,12 +106,18 @@ mood.innerHTML=`
 <span class="text-uppercase pe-3" >light</span>
 <i class="fa-regular fa-sun"></i>`
 console.log(mood);
-let moodType = 1; // light mood
+let moodType
+ if(localStorage.getItem('mood')){
+    moodType =localStorage.getItem("mood");
+ }else{
+    moodType ='dark'
+ } 
 
 const changeMood = ()=>{
 
-    if(moodType==1){
-    moodType = 0;  // dark mood
+    if(moodType=='dark'){
+    moodType = 'light';  // dark mood
+    localStorage.setItem("mood","light")
     console.log(moodType);
     console.log('dark');
     mood.innerHTML=`<span class="text-uppercase pe-3" >dark</span>
@@ -138,7 +147,8 @@ const changeMood = ()=>{
 }
    else{
     console.log('light');
-    moodType=1;
+    moodType='dark';
+    localStorage.setItem("mood","dark")
     mood.innerHTML=
     `<span class="text-uppercase pe-3" >light</span>
     <i class="fa-solid fa-sun"></i>`;
